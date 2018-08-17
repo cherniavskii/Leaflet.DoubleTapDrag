@@ -1,0 +1,23 @@
+{
+  "name": "leaflet-doubletapdrag",
+  "version": "0.1.0",
+  "description": "Leaflet plugin that allows to handle double-tap-and-drag gestures",
+  "main": "Leaflet.DoubleTapDrag.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cherniavskii/Leaflet.DoubleTapDrag.git"
+  },
+  "peerDependencies": {
+    "leaflet": "~1.0.0"
+  },
+  "keywords": [
+    "leaflet",
+    "maps"
+  ],
+  "author": "cherniavskii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cherniavskii/Leaflet.DoubleTapDrag/issues"
+  },
+  "homepage": "https://github.com/cherniavskii/Leaflet.DoubleTapDrag#readme"
+}

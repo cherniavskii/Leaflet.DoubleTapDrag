@@ -34,14 +34,13 @@ map.on('doubletapdragend', (e) => {
 
 ### Loading from unpkg.com:
 
+Add script to head:
+
+`<script src="https://unpkg.com/leaflet-doubletapdrag"></script>`
+
+Now it's ready to use.
+
 ```
-
-<script src="https://unpkg.com/leaflet-doubletapdrag"></script>
-
-...
-...
-...
-
 const map = L.map('map');
 
 ...

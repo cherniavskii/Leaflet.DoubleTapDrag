@@ -3,6 +3,8 @@
 This plugin adds `doubletapdragstart`, `doubletapdrag` and `doubletapdragend` map events on touch devices.
 It allows to handle double-tap and hold gesture.
 
+## Demo: https://cherniavskii.github.io/Leaflet.DoubleTapDrag/
+
 ## Usage
 
 ### NPM

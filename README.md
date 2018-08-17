@@ -38,7 +38,7 @@ Add script to head:
 
 `<script src="https://unpkg.com/leaflet-doubletapdrag"></script>`
 
-Now it's ready to use.
+Now it's ready to use:
 
 ```
 const map = L.map('map');
@@ -62,6 +62,6 @@ map.on('doubletapdragend', (e) => {
 
 ## Events
 
-`doubletapdragstart` - fired when user double-taps and holds finger on map
-`doubletapdrag` - fired when user moves finger without releasing it from screen
-`doubletapdrag` - fires when user releases finger from screen
+- `doubletapdragstart` - fired when user double-taps and holds finger on map
+- `doubletapdrag` - fired when user moves finger without releasing it from screen
+- `doubletapdrag` - fires when user releases finger from screen

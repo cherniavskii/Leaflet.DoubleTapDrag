@@ -64,4 +64,4 @@ map.on('doubletapdragend', (e) => {
 
 - `doubletapdragstart` - fired when user double-taps and holds finger on map
 - `doubletapdrag` - fired when user moves finger without releasing it from screen
-- `doubletapdrag` - fires when user releases finger from screen
+- `doubletapdragend` - fires when user releases finger from screen

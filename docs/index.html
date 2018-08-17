@@ -19,20 +19,23 @@
         #console {
             height: 40%;
             margin: 0;
-            padding: 0;
+            padding: 0 4px;
             overflow: auto;
         }
         #console-clear {
             position: absolute;
-            bottom: 0;
-            right: 0;
+            bottom: 4px;
+            right: 4px;
         }
     </style>
 </head>
 <body>
 
 <div id="map"></div>
-<div id="console"></div>
+<div id="console">
+    <pre><b>Double tap, hold and move your finger</b></pre>
+    <pre><b>(touchscreen only)</b></pre>
+</div>
 <button id="console-clear">Clear</button>
 
 <script src="console.js"></script>

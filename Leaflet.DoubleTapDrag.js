@@ -3,6 +3,7 @@ function DoubleTapDragInitHook() {
   var fired = false;
   var lastTimestamp = null;
   var DOUBLE_CLICK_TIMEOUT = 500;
+  var WAIT_FOR_DRAG_END_TIMEOUT = 100;
 
   this._container.addEventListener('touchstart', L.Util.bind(function (e) {
     if (e.touches.length !== 1) {
@@ -15,7 +16,7 @@ function DoubleTapDragInitHook() {
           this.fire('doubletapdragstart', e);
           timer = null;
           fired = true;
-        }, this), 200);
+        }, this), WAIT_FOR_DRAG_END_TIMEOUT);
       }
       lastTimestamp = null;
     } else {

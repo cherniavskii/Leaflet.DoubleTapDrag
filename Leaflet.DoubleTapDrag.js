@@ -2,6 +2,7 @@ function DoubleTapDragInitHook() {
   var timer = null;
   var fired = false;
   var lastTimestamp = null;
+  var DOUBLE_CLICK_TIMEOUT = 500;
 
   this._container.addEventListener('touchstart', L.Util.bind(function (e) {
     if (e.touches.length !== 1) {
@@ -9,7 +10,7 @@ function DoubleTapDragInitHook() {
     }
     var now = Date.now();
     if (lastTimestamp) {
-      if (now - lastTimestamp < 200) {
+      if (now - lastTimestamp < DOUBLE_CLICK_TIMEOUT) {
         timer = setTimeout(L.Util.bind(function () {
           this.fire('doubletapdragstart', e);
           timer = null;
@@ -21,7 +22,7 @@ function DoubleTapDragInitHook() {
       lastTimestamp = Date.now();
       setTimeout(L.Util.bind(function () {
         lastTimestamp = null;
-      }, this), 200);
+      }, this), DOUBLE_CLICK_TIMEOUT);
     }
   }, this));
 

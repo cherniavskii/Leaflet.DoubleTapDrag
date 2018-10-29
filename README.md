@@ -3,6 +3,8 @@
 This plugin adds `doubletapdragstart`, `doubletapdrag` and `doubletapdragend` map events on touch devices.
 It allows to handle double-tap and hold gesture.
 
+This plugin is a base plugin for [Leaflet.DoubleTapDragZoom](Leaflet.DoubleTapDragZoom), that implements double-tap-and-drag zoom feature for zooming in / out with one finger on touchscreen.
+
 ## Demo: https://cherniavskii.github.io/Leaflet.DoubleTapDrag/
 
 ## Usage

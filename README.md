@@ -1,3 +1,8 @@
+![](https://img.shields.io/npm/v/leaflet-doubletapdrag.svg)
+![](https://img.shields.io/bundlephobia/minzip/leaflet-doubletapdrag.svg)
+![](https://img.shields.io/npm/l/leaflet-doubletapdrag.svg)
+![](https://img.shields.io/npm/dt/leaflet-doubletapdrag.svg)
+
 # Leaflet.DoubleTapDrag
 
 This plugin adds `doubletapdragstart`, `doubletapdrag` and `doubletapdragend` map events on touch devices.

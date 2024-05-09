@@ -1,63 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Leaflet.DoubleTapDrag</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    />
     <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-doubletapdrag"></script>
     <style>
-        body, html {
-            margin: 0;
-            height: 100%;
-        }
-        #map {
-            width: 100%;
-            height: 60%;
-        }
-        #console {
-            height: 40%;
-            margin: 0;
-            padding: 0 4px;
-            overflow: auto;
-        }
-        #console-clear {
-            position: absolute;
-            bottom: 4px;
-            right: 4px;
-        }
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+      }
+      #map {
+        width: 100%;
+        height: 60%;
+      }
+      #console {
+        height: 40%;
+        margin: 0;
+        padding: 0 4px;
+        overflow: auto;
+      }
+      #console-clear {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="console">
+      <pre><b>Double tap, hold and move your finger</b></pre>
+      <pre><b>(touchscreen only)</b></pre>
+    </div>
+    <button id="console-clear">Clear</button>
 
-<div id="map"></div>
-<div id="console">
-    <pre><b>Double tap, hold and move your finger</b></pre>
-    <pre><b>(touchscreen only)</b></pre>
-</div>
-<button id="console-clear">Clear</button>
+    <script src="console.js"></script>
 
-<script src="console.js"></script>
+    <script type="text/javascript">
+      var map = L.map("map").setView([-27.1117, -109.339], 11);
 
-<script type="text/javascript">
-  var map = L.map('map').setView([-27.1117, -109.3390], 11);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+      var consoleInstance = new Console("console");
+      var clearButton = document.getElementById("console-clear");
+      clearButton.addEventListener(
+        "click",
+        consoleInstance.clear.bind(consoleInstance)
+      );
 
-  var consoleInstance = new Console('console');
-  var clearButton = document.getElementById('console-clear');
-  clearButton.addEventListener('click', consoleInstance.clear.bind(consoleInstance));
+      function logEvent(e) {
+        consoleInstance.addItem(e.type);
+      }
 
-  function logEvent(e) {
-    consoleInstance.addItem(e.type);
-  }
-
-  map.on('doubletapdrag', logEvent);
-  map.on('doubletapdragstart', logEvent);
-  map.on('doubletapdragend', logEvent);
-</script>
-</body>
+      map.on("doubletapdrag", logEvent);
+      map.on("doubletapdragstart", logEvent);
+      map.on("doubletapdragend", logEvent);
+    </script>
+  </body>
 </html>
